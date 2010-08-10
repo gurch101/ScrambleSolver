@@ -17,10 +17,12 @@ public class Graph<T> {
 	}
 	
 	public void addEdge(T from, T to){
-		if(!hasVertex(from)) addVertex(from);
-		if(!hasVertex(to)) addVertex(to);
-		adj.get(from).add(to);
-		adj.get(to).add(from);
+		if(from != null && to != null){
+			if(!hasVertex(from)) addVertex(from);
+			if(!hasVertex(to)) addVertex(to);
+			adj.get(from).add(to);
+			adj.get(to).add(from);
+		}
 	}
 	
 	public void addVertex(T c){
